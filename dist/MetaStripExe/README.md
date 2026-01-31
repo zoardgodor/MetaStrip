@@ -15,9 +15,9 @@ A privacy-focused, offline Windows desktop application for viewing, editing, and
   - Automatic file type and MIME type detection
 - **Multilingual Support**: English and Hungarian user interface with language preference storage in AppData
 - **Wide File Support**:
-  - **Images**: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG
-  - **Audio**: MP3, FLAC, OGG, WAV
-  - **Documents**: PDF
+  - **Images**: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG ...etc.
+  - **Audio**: MP3, FLAC, OGG, WAV ...etc.
+  - **Documents**: PDF, PPTX, DOCX, XLSX ...etc.
 - **User-Friendly Interface**: Clean and intuitive interface built with PySide6, organized in tabs
 - **Offline Operation**: Complete privacy protection - does not send data to external servers
 - **Modular Structure**: Well-organized code structure for easy maintenance and extension

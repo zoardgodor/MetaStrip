@@ -15,9 +15,9 @@ Az adatvédelemre összpontosított, offline működő Windows asztali alkalmaz�
   - Fájltípus és MIME típus detektálása
 - **Többnyelvű támogatás**: Angol és magyar felhasználói felület, nyelvbeállítás tárolása AppData-ban
 - **Széles fájltámogatás**:
-  - **Képek**: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG
-  - **Audio**: MP3, FLAC, OGG, WAV
-  - **Dokumentumok**: PDF
+  - **Képek**: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG ...stb.
+  - **Audio**: MP3, FLAC, OGG, WAV ...stb.
+  - **Dokumentumok**: PDF, PPTX, DOCX, XLSX ...stb.
 - **Felhasználóbarát felület**: Tiszta és intuitív felület a PySide6-tal készítve, fülekre szervezett megjelenítés
 - **Offline működés**: Teljes adatvédelem - nem küldi az adatokat külső szervereire
 - **Moduláris szerkezet**: Jól szervezett kódstruktúra az egyszerű karbantartás és bővítés érdekében
