@@ -4,10 +4,17 @@ from PIL import Image
 import piexif
 import mutagen
 from PyPDF2 import PdfReader, PdfWriter
+from docx import Document
+from pptx import Presentation
+from openpyxl import load_workbook
 
 SUPPORTED_IMAGE_FORMATS = {'.jpg', '.jpeg', '.tiff', '.tif', '.png', '.bmp', '.gif', '.webp', '.ico', '.svg'}
 SUPPORTED_AUDIO_FORMATS = {'.mp3', '.flac', '.ogg', '.wav'}
 SUPPORTED_PDF_FORMATS = {'.pdf'}
+SUPPORTED_DOCUMENT_FORMATS = {'.docx'}
+SUPPORTED_PRESENTATION_FORMATS = {'.pptx'}
+SUPPORTED_SPREADSHEET_FORMATS = {'.xlsx'}
+SUPPORTED_VIDEO_FORMATS = {'.mp4', '.avi', '.mkv', '.mov', '.flv', '.wmv', '.webm'}
 
 
 def get_file_extension(file_path):
@@ -15,7 +22,6 @@ def get_file_extension(file_path):
 
 
 def save_image_metadata(file_path, metadata_dict):
-    """Save EXIF metadata to image file"""
     try:
         ext = get_file_extension(file_path)
         
@@ -84,7 +90,6 @@ def save_image_metadata(file_path, metadata_dict):
 
 
 def save_audio_metadata(file_path, metadata_dict):
-    """Save ID3 metadata to audio file"""
     try:
         audio = mutagen.File(file_path, easy=True)
         if audio is None:
@@ -105,7 +110,6 @@ def save_audio_metadata(file_path, metadata_dict):
 
 
 def save_pdf_metadata(file_path, metadata_dict):
-    """Save metadata to PDF file"""
     try:
         reader = PdfReader(file_path)
         writer = PdfWriter()
@@ -141,5 +145,80 @@ def save_metadata(file_path, metadata_dict):
         return save_audio_metadata(file_path, metadata_dict)
     elif ext in SUPPORTED_PDF_FORMATS:
         return save_pdf_metadata(file_path, metadata_dict)
+    elif ext in SUPPORTED_DOCUMENT_FORMATS:
+        return save_docx_metadata(file_path, metadata_dict)
+    elif ext in SUPPORTED_PRESENTATION_FORMATS:
+        return save_pptx_metadata(file_path, metadata_dict)
+    elif ext in SUPPORTED_SPREADSHEET_FORMATS:
+        return save_xlsx_metadata(file_path, metadata_dict)
     else:
         return False, f"Unsupported file format: {ext}"
+
+
+def save_docx_metadata(file_path, metadata_dict):
+    try:
+        doc = Document(file_path)
+        props = doc.core_properties
+        
+        for key, value in metadata_dict.items():
+            if key == "DOCX:Cím":
+                props.title = str(value)
+            elif key == "DOCX:Tárgy":
+                props.subject = str(value)
+            elif key == "DOCX:Szerző":
+                props.author = str(value)
+            elif key == "DOCX:Kulcsszavak":
+                props.keywords = str(value)
+            elif key == "DOCX:Megjegyzések":
+                props.comments = str(value)
+        
+        doc.save(file_path)
+        return True, "DOCX metaadatok mentve"
+    except Exception as e:
+        return False, f"Hiba a DOCX metaadatok mentésekor: {str(e)}"
+
+
+def save_pptx_metadata(file_path, metadata_dict):
+    try:
+        prs = Presentation(file_path)
+        props = prs.core_properties
+        
+        for key, value in metadata_dict.items():
+            if key == "PPTX:Cím":
+                props.title = str(value)
+            elif key == "PPTX:Tárgy":
+                props.subject = str(value)
+            elif key == "PPTX:Szerző":
+                props.author = str(value)
+            elif key == "PPTX:Kulcsszavak":
+                props.keywords = str(value)
+            elif key == "PPTX:Megjegyzések":
+                props.comments = str(value)
+        
+        prs.save(file_path)
+        return True, "PPTX metaadatok mentve"
+    except Exception as e:
+        return False, f"Hiba a PPTX metaadatok mentésekor: {str(e)}"
+
+
+def save_xlsx_metadata(file_path, metadata_dict):
+    try:
+        wb = load_workbook(file_path)
+        props = wb.properties
+        
+        for key, value in metadata_dict.items():
+            if key == "XLSX:Cím":
+                props.title = str(value)
+            elif key == "XLSX:Tárgy":
+                props.subject = str(value)
+            elif key == "XLSX:Szerző":
+                props.author = str(value)
+            elif key == "XLSX:Kulcsszavak":
+                props.keywords = str(value)
+            elif key == "XLSX:Megjegyzések":
+                props.comments = str(value)
+        
+        wb.save(file_path)
+        return True, "XLSX metaadatok mentve"
+    except Exception as e:
+        return False, f"Hiba az XLSX metaadatok mentésekor: {str(e)}"

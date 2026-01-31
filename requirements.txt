@@ -3,4 +3,8 @@ Pillow
 piexif
 mutagen
 PyPDF2
+python-docx
+python-pptx
+openpyxl
+opencv-python
 pyinstaller

@@ -12,10 +12,15 @@ TRANSLATIONS = {
         'open_file': 'Fájl megnyitása',
         'remove_metadata': 'Metaadatok eltávolítása',
         'edit_metadata': 'Metaadatok szerkesztése',
+        'edit_button': 'Szerkesztés',
         'exif_tab': 'EXIF / Fájl adatok',
         'file_tab': 'Fájl tulajdonságok',
-        'audio_tab': 'Audio metaadatok',
-        'pdf_tab': 'PDF metaadatok',
+        'audio_tab': 'Audio',
+        'pdf_tab': 'PDF',
+        'docx_tab': 'Word',
+        'pptx_tab': 'PowerPoint',
+        'xlsx_tab': 'Excel',
+        'video_tab': 'Videó',
         'copy': 'Másolás',
         'no_exif': 'Nincs EXIF metaadat',
         'no_file_info': 'Nincs fájl információ',
@@ -34,7 +39,7 @@ TRANSLATIONS = {
         'cancel_button': 'Mégse',
         'save_success': 'Sikeres mentés',
         'metadata_saved': 'Metaadatok sikeresen mentve!',
-        'edit_button': 'Szerkesztés',
+        'supported_formats': 'Támogatott formátumok: képek, audio, PDF, Word, PowerPoint, Excel, videók',
     },
     'en': {
         'title': 'MetaStrip',
@@ -42,10 +47,15 @@ TRANSLATIONS = {
         'open_file': 'Open File',
         'remove_metadata': 'Remove Metadata',
         'edit_metadata': 'Edit Metadata',
+        'edit_button': 'Edit',
         'exif_tab': 'EXIF / File Data',
         'file_tab': 'File Properties',
-        'audio_tab': 'Audio Metadata',
-        'pdf_tab': 'PDF Metadata',
+        'audio_tab': 'Audio',
+        'pdf_tab': 'PDF',
+        'docx_tab': 'Word',
+        'pptx_tab': 'PowerPoint',
+        'xlsx_tab': 'Excel',
+        'video_tab': 'Video',
         'copy': 'Copy',
         'no_exif': 'No EXIF metadata',
         'no_file_info': 'No file information',
@@ -64,13 +74,12 @@ TRANSLATIONS = {
         'cancel_button': 'Cancel',
         'save_success': 'Success',
         'metadata_saved': 'Metadata saved successfully!',
-        'edit_button': 'Edit',
+        'supported_formats': 'Supported formats: images, audio, PDF, Word, PowerPoint, Excel, videos',
     }
 }
 
 
 def get_language():
-    """Get saved language or default to 'en'"""
     try:
         if LANGUAGE_FILE.exists():
             with open(LANGUAGE_FILE, 'r', encoding='utf-8') as f:
@@ -84,7 +93,6 @@ def get_language():
 
 
 def set_language(lang):
-    """Save language preference to AppData"""
     try:
         APPDATA_PATH.mkdir(parents=True, exist_ok=True)
         with open(LANGUAGE_FILE, 'w', encoding='utf-8') as f:
@@ -94,7 +102,6 @@ def set_language(lang):
 
 
 def get_text(key, language=None):
-    """Get translated text for a key"""
     if language is None:
         language = get_language()
     
@@ -105,7 +112,6 @@ def get_text(key, language=None):
 
 
 def get_all_texts(language=None):
-    """Get all translations for a language"""
     if language is None:
         language = get_language()
     
