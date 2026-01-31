@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>MetaStrip – Metadata Editor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: #0f172a;
+            color: #e5e7eb;
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2563eb, #1e40af);
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+
+        header p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            background: #020617;
+        }
+
+        nav button {
+            background: none;
+            border: 1px solid #2563eb;
+            color: #e5e7eb;
+            padding: 6px 12px;
+            margin-left: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        nav button:hover {
+            background: #2563eb;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            color: #93c5fd;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            margin-right: 15px;
+            margin-top: 10px;
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+        }
+
+        .buttons a:hover {
+            background: #1d4ed8;
+        }
+
+        footer {
+            background: #020617;
+            padding: 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9ca3af;
+        }
+
+        .lang {
+            display: none;
+        }
+
+        .lang.active {
+            display: block;
+        }
+
+        code {
+            background: #020617;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: Consolas, monospace;
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <button onclick="setLang('hu')">Magyar</button>
+    <button onclick="setLang('en')">English</button>
+</nav>
+
+<header>
+    <h1>MetaStrip</h1>
+    <p>Privacy-focused metadata editor for images, audio, and PDF files</p>
+</header>
+
+<main>
+
+    <div id="hu" class="lang active">
+
+        <section>
+            <h2>Mi az a MetaStrip?</h2>
+            <p>
+                A <strong>MetaStrip</strong> egy offline, adatvédelmi fókuszú Windows alkalmazás, amely lehetővé teszi képek,
+                dokumentumok és médiafájlok metaadatainak megtekintését, szerkesztését és eltávolítását.
+            </p>
+        </section>
+
+        <section>
+            <h2>Főbb funkciók</h2>
+            <ul>
+                <li>Metaadatok megtekintése: EXIF, XMP, ID3, PDF</li>
+                <li>Metaadatok szerkesztése: módosítás, új bejegyzés hozzáadása, törlés</li>
+                <li>Metaadatok eltávolítása teljesen</li>
+                <li>Kijelölt metaadatok másolása (Ctrl+C)</li>
+                <li>Fájl tulajdonságok megjelenítése (méret, dátumok, DPI, képméret, megapixel)</li>
+                <li>Többnyelvű felület (magyar, angol)</li>
+                <li>Támogatott fájlok: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG, MP3, FLAC, OGG, WAV, PDF</li>
+                <li>Felhasználóbarát, fülekre szervezett PySide6 felület</li>
+                <li>Offline működés – teljes adatvédelem</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Telepítés</h2>
+            <div class="buttons">
+                <a href="https://github.com/zoardgodor/MetaStrip/releases/" target="_blank">Letöltés (Installer/Zip)</a>
+                <a href="https://github.com/zoardgodor/MetaStrip" target="_blank">GitHub / README</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Használat</h2>
+            <ul>
+                <li>Fájl megnyitása: "Open File" gomb</li>
+                <li>Metaadatok megtekintése külön füleken (EXIF, File Properties, Audio Metadata, PDF Metadata)</li>
+                <li>Másolás: jobb klikk vagy Ctrl+C</li>
+                <li>Metaadat szerkesztés: "Edit" gomb – módosítás, új hozzáadása, törlés, mentés</li>
+                <li>Metaadat eltávolítása: "Remove Metadata" gomb</li>
+                <li>Nyelvváltás: "Language" menü – beállítás mentése automatikusan</li>
+            </ul>
+        </section>
+
+    </div>
+
+    <div id="en" class="lang">
+
+        <section>
+            <h2>What is MetaStrip?</h2>
+            <p>
+                <strong>MetaStrip</strong> is an offline, privacy-focused Windows application for viewing, editing,
+                and removing metadata from images, documents, and media files.
+            </p>
+        </section>
+
+        <section>
+            <h2>Main Features</h2>
+            <ul>
+                <li>View Metadata: EXIF, XMP, ID3, PDF</li>
+                <li>Edit Metadata: modify, add new entries, delete entries</li>
+                <li>Remove Metadata completely</li>
+                <li>Copy selected metadata (Ctrl+C)</li>
+                <li>File properties display: size, dates, DPI, dimensions, megapixels</li>
+                <li>Multilingual interface (English, Hungarian)</li>
+                <li>Supported files: JPEG, PNG, TIFF, BMP, GIF, WebP, ICO, SVG, MP3, FLAC, OGG, WAV, PDF</li>
+                <li>User-friendly PySide6 tabbed interface</li>
+                <li>Offline operation – full privacy protection</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Installation</h2>
+            <div class="buttons">
+                <a href="https://github.com/zoardgodor/MetaStrip/releases/" target="_blank">Download (Installer/Zip)</a>
+                <a href="https://github.com/zoardgodor/MetaStrip" target="_blank">GitHub / README</a>
+            </div>
+        </section>
+
+        <section>
+            <h2>Usage</h2>
+            <ul>
+                <li>Open File: click "Open File" button</li>
+                <li>View metadata in separate tabs (EXIF, File Properties, Audio Metadata, PDF Metadata)</li>
+                <li>Copy: right click or Ctrl+C</li>
+                <li>Edit Metadata: "Edit" button – modify, add new, delete, save changes</li>
+                <li>Remove Metadata: "Remove Metadata" button</li>
+                <li>Language Switch: "Language" menu – selection stored automatically</li>
+            </ul>
+        </section>
+
+    </div>
+
+</main>
+
+<footer>
+    © MetaStrip – Created by Gódor Zoárd
+</footer>
+
+<script>
+    function setLang(lang) {
+        document.querySelectorAll('.lang').forEach(el => el.classList.remove('active'));
+        document.getElementById(lang).classList.add('active');
+        document.documentElement.lang = lang;
+    }
+</script>
+
+</body>
+</html>

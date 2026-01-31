@@ -1,0 +1,44 @@
+Copyright (c) 2026 Zoárd Gódor. All rights reserved.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, and modify the Software solely for non-commercial purposes, subject to the following terms and conditions:
+
+1. Definitions
+   a) "Software" refers to all source code, binary code, scripts, libraries, documentation, and any other files distributed under this license.
+   b) "Non-Commercial Purposes" means use, distribution, or modification not intended for or directed toward commercial advantage or monetary compensation.
+   c) "Modifications" refers to any changes, enhancements, translations, adaptations, or derivative works based on the Software.
+
+2. Grant of Rights
+   a) You may use, reproduce, and modify the Software for Non-Commercial Purposes.
+   b) You may distribute the original or modified Software, provided that:
+      i. The original author (Zoárd Gódor) is clearly credited.
+      ii. A copy of this License is included.
+      iii. Any modifications are clearly documented and identified as such.
+
+3. Prohibited Uses
+   a) The Software may not be sold, sublicensed, or used in any commercial activity, including but not limited to charging money for distribution, licensing, or inclusion in paid products or services.
+   b) The Software may not be used to create commercial offerings, including hosting, cloud services, or paid applications, without the express written permission of the copyright holder.
+
+4. Attribution
+   a) Any distribution of the Software, whether original or modified, must include a clear notice attributing the work to Zoárd Gódor.
+   b) You may indicate the modifications you have made, but must not imply endorsement by the original author.
+
+5. Disclaimer of Warranty
+   a) The Software is provided "as is" without any warranty, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.
+   b) The author disclaims all warranties regarding the quality, accuracy, reliability, or suitability of the Software for any purpose.
+
+6. Limitation of Liability
+   a) Under no circumstances shall the author, Zoárd Gódor, be liable for any direct, indirect, incidental, special, exemplary, or consequential damages, including but not limited to loss of data, revenue, or profits, arising out of or in connection with the use or inability to use the Software.
+   b) This limitation applies regardless of whether the damages result from misuse, malicious use, illegal actions, negligence, or any other cause.
+
+7. Redistribution Requirements
+   a) Source Code: If you distribute the Software in source code form, you must include a copy of this License and the copyright notice.
+   b) Object/Binary Form: If you distribute the Software in compiled or binary form, you must reproduce the above copyright notice and this License in the documentation or other materials provided with the distribution.
+
+8. Governing Law
+   This License shall be governed by, and construed in accordance with, the laws of Hungary. Any legal action or proceeding arising under this License shall be brought exclusively in the courts of Hungary.
+
+9. Severability
+   If any provision of this License is held to be unenforceable or invalid, such provision shall be limited or eliminated to the minimum extent necessary so that this License shall otherwise remain in full force and effect.
+
+10. Acceptance
+   By using, copying, modifying, or distributing the Software, you acknowledge that you have read, understood, and agree to be bound by the terms and conditions of this License.

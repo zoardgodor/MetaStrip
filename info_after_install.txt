@@ -1,0 +1,15 @@
+Thank you for choosing MetaStrip!
+
+For more information and to view the source code,
+ please visit this website: https://github.com/zoardgodor/MetaStrip/
+
+With thanks: Zoárd Gódor, developer of MetaStrip
+
+-------------------------------------------------------------------------------
+
+Köszönöjük hogy a MetaStrip-et választotta!
+
+További információért, és a forráskód
+megtekintésére tekintse meg ezt a weboldalt: https://github.com/zoardgodor/MetaStrip/
+
+Köszönettel: Gódor Zoárd a MetaStrip fejlesztője
