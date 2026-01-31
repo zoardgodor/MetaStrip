@@ -39,7 +39,7 @@ telepítene. (MetaStrip_vx.x_WIN64.zip)
 
 1. Klónozza vagy töltse le az adattárat:
 ```bash
-git clone https://github.com/yourusername/MetaStrip.git
+git clone https://github.com/zoardgodor/MetaStrip.git
 cd MetaStrip
 ```
 

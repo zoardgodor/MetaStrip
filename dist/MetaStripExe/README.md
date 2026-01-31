@@ -38,7 +38,7 @@ Or download the compressed archive which contains what the installer would insta
 
 1. Clone or download the repository:
 ```bash
-git clone https://github.com/yourusername/MetaStrip.git
+git clone https://github.com/zoardgodor/MetaStrip.git
 cd MetaStrip
 ```
 
