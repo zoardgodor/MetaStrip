@@ -31,15 +31,15 @@ Run the PowerShell script:
 Run this command directly:
 
 ```powershell
-pyinstaller --onedir --windowed --icon=icon.ico --name=MetaStrip --add-data "open_metastrip:open_metastrip" main.py
+pyinstaller --onedir --windowed --icon=logo.ico --name=MetaStripExe --add-data "open_metastrip:open_metastrip" main.py
 ```
 
 ## Build Options Explained
 
 - `--onedir`: Creates a folder with the executable and all dependencies inside
 - `--windowed` (or `-w`): Runs without a console window (GUI only)
-- `--icon=icon.ico`: Adds the icon.ico file as the application icon
-- `--name=MetaStrip`: Names the executable and output folder "MetaStrip"
+- `--icon=logo.ico`: Adds the logo.ico file as the application icon
+- `--name=MetaStripExe`: Names the executable and output folder "MetaStripExe"
 - `--add-data "open_metastrip:open_metastrip"`: Includes the open_metastrip module
 
 ## Output
@@ -47,21 +47,21 @@ pyinstaller --onedir --windowed --icon=icon.ico --name=MetaStrip --add-data "ope
 After building, the executable will be located in:
 
 ```
-dist/MetaStrip/MetaStrip.exe
+dist/MetaStripExe/MetaStripExe.exe
 ```
 
 You can run it directly:
 
 ```powershell
-.\dist\MetaStrip\MetaStrip.exe
+.\dist\MetaStripExe\MetaStripExe.exe
 ```
 
 ## Distribution
 
 To distribute MetaStrip:
 
-1. Copy the entire `dist/MetaStrip` folder
-2. Users can run `MetaStrip.exe` without needing Python installed
+1. Copy the entire `dist/MetaStripExe` folder
+2. Users can run `MetaStripExe.exe` without needing Python installed
 3. No external dependencies required
 
 ## Clean Build
@@ -78,8 +78,8 @@ Then run the build command again.
 
 ## Troubleshooting
 
-**Error: `icon.ico` not found**
-- Ensure `icon.ico` is in the project root directory
+**Error: `logo.ico` not found**
+- Ensure `logo.ico` is in the project root directory
 
 **Error: Module not found**
 - Make sure all imports in the code are correct

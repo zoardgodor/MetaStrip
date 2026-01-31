@@ -8,11 +8,11 @@ echo.
 .venv\Scripts\pyinstaller.exe ^
     --onedir ^
     --windowed ^
-    --icon=icon.ico ^
-    --name=MetaStrip ^
+    --icon=logo.ico ^
+    --name=MetaStripExe ^
     --add-data "open_metastrip:open_metastrip" ^
     main.py
 
 echo.
-echo Build complete! The executable is located in the 'dist\MetaStrip' folder.
+echo Build complete! The executable is located in the 'dist\MetaStripExe' folder.
 pause

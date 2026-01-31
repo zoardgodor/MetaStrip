@@ -7,11 +7,11 @@ Write-Host ""
 & .\.venv\Scripts\pyinstaller.exe `
     --onedir `
     --windowed `
-    --icon=icon.ico `
-    --name=MetaStrip `
+    --icon=logo.ico `
+    --name=MetaStripExe `
     --add-data "open_metastrip:open_metastrip" `
     main.py
 
 Write-Host ""
-Write-Host "Build complete! The executable is located in the 'dist\MetaStrip' folder." -ForegroundColor Green
-Write-Host "Run it with: .\dist\MetaStrip\MetaStrip.exe" -ForegroundColor Cyan
+Write-Host "Build complete! The executable is located in the 'dist\MetaStripExe' folder." -ForegroundColor Green
+Write-Host "Run it with: .\dist\MetaStripExe\MetaStripExe.exe" -ForegroundColor Cyan
